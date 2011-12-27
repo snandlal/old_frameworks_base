@@ -3386,4 +3386,7 @@
     <!-- STK setup Call -->
     <string name="SetupCallDefault">Accept Call?</string>
 
+    <!-- Long-press back kill application -->
+    <string name="app_killed_message">Application killed</string>
+
 </resources>
