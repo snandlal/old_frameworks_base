@@ -3667,4 +3667,7 @@
   <java-symbol type="string" name="second" />
   <java-symbol type="string" name="seconds" />
 
+  <!-- Automatic brighness mods -->
+  <java-symbol type="bool" name="config_autoBrightnessButtonKeyboard" />
+
 </resources>
