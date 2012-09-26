@@ -3360,6 +3360,42 @@ public class PowerManagerService extends IPowerManager.Stub
 
     private void handleLightSensorValue(int value, boolean immediate) {
         long milliseconds = SystemClock.elapsedRealtime();
+        mLightFilterSample = value;
+        if (mAutoBrightessEnabled && mLightFilterEnabled) {
+            if (mLightFilterRunning && mLightSensorValue != -1) {
+                // Large changes -> quick response
+                int diff = value - (int)mLightSensorValue;
+                if (mLightFilterReset != -1 && diff > mLightFilterReset && // Only increasing
+                        mLightSensorValue < 1500) { // Only "indoors"
+                    if (mDebugLightSensor) {
+                        Slog.d(TAGF, "reset cause: " + value +
+                                " " + mLightSensorValue + " " + diff);
+                    }
+                    // Push filter faster towards sensor value
+                    lightFilterReset((int)(mLightSensorValue + diff / 2f));
+                }
+                if (mDebugLightSensor) {
+                    Slog.d(TAGF, "sample: " + value);
+                }
+            } else {
+                if (mLightSensorValue == -1 ||
+                        milliseconds < mLastScreenOnTime + mLightSensorWarmupTime) {
+                    // process the value immediately if screen has just turned on
+                    lightFilterReset(-1);
+                    lightSensorChangedLocked(value, true);
+                }
+                if (!mLightFilterRunning) {
+                    if (mDebugLightSensor) {
+                        Slog.d(TAGF, "start: " + value);
+                    }
+                    mLightFilterRunning = true;
+                    mHandler.postDelayed(mLightFilterTask, LIGHT_SENSOR_DELAY);
+                }
+            }
+            return;
+        }
+
+        // Light filter disabled
         if (mLightSensorValue == -1
                 || milliseconds < mLastScreenOnTime + mLightSensorWarmupTime
                 || mWaitingForFirstLightSensor) {
