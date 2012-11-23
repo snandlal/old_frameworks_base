@@ -1815,4 +1815,11 @@
   <!-- From PinyinIME(!!!) -->
   <java-symbol type="string" name="inputMethod" />
 
+  <!-- ===============================================================
+  Extra Resources added
+  =============================================================== -->
+
+  <!-- Config.xml entries -->
+  <java-symbol type="bool" name="config_smsSamsungCdmaAlternateMessageIDEncoding" />
+
 </resources>
