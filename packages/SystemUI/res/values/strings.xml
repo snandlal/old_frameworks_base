@@ -520,4 +520,18 @@
     <!-- Body of help text shown when the notification panel is pulled down for the very first time. [CHAR LIMIT=NONE] -->
     <string name="status_bar_help_text">Access them anytime by swiping down.\nSwipe down again for system controls.</string>
     <string name="powerwidget_screen_timeout_toast">Screen timeout set to: %1$d %2$s</string>
+
+    <!-- Variants of QuickSettings. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_gps">GPS</string>
+    <string name="quick_settings_screen_sleep">Go to sleep</string>
+    <string name="quick_settings_ringer_on">Sound on</string>
+    <string name="quick_settings_ringer_off">Sound off</string>
+    <string name="quick_settings_vibration_on">Vibration on</string>
+    <string name="quick_settings_vibration_off">Vibration off</string>
+    <string name="quick_settings_label_enabled">On</string>
+    <string name="quick_settings_label_disabled">Off</string>
+    <string name="quick_settings_ringer_normal">Sound</string>
+    <string name="quick_settings_lockscreen">Lock Screen</string>
+    <string name="quick_settings_network_type">Network Type</string>
+    <string name="quick_settings_report_bug">Report Bug</string>
 </resources>
