@@ -302,9 +302,6 @@ please see themes_device_defaults.xml.
         <item name="preferencePanelStyle">@style/PreferencePanel</item>
         <item name="detailsElementBackground">@android:drawable/panel_bg_holo_dark</item>
 
-        <!-- PreferenceFrameLayout attributes -->
-        <item name="preferenceFrameLayoutStyle">@android:style/Widget.Holo.PreferenceFrameLayout</item>
-
         <!-- Search widget styles -->
         <item name="searchWidgetCorpusItemBackground">@android:color/search_widget_corpus_item_background</item>
 
