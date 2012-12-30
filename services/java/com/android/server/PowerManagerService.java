@@ -3365,6 +3365,7 @@ public class PowerManagerService extends IPowerManager.Stub
 
     private void handleLightSensorValue(int value, boolean immediate) {
         long milliseconds = SystemClock.elapsedRealtime();
+        mLightFilterSample = value;
         if (mAutoBrightessEnabled && mLightFilterEnabled) {
             if (mLightFilterRunning && mLightSensorValue != -1) {
                 // Large changes -> quick response
