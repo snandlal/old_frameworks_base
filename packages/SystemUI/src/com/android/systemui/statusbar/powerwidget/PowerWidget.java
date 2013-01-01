@@ -52,7 +52,6 @@ public class PowerWidget extends FrameLayout {
                              + BUTTON_DELIMITER + PowerButton.BUTTON_BLUETOOTH
                              + BUTTON_DELIMITER + PowerButton.BUTTON_GPS
                              + BUTTON_DELIMITER + PowerButton.BUTTON_SOUND
-			     + BUTTON_DELIMITER + PowerButton.BUTTON_WIMAX
 			     + BUTTON_DELIMITER + PowerButton.BUTTON_MOBILEDATA;
 
     private static final FrameLayout.LayoutParams WIDGET_LAYOUT_PARAMS = new FrameLayout.LayoutParams(
